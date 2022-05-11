@@ -11,10 +11,14 @@
     display: flex;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.3);
+    overflow:scroll;
+    overflow-x:hidden;
+    height: 70vh;
 }
 
 .proizvodi {
     width: 60%;
+    height: fit-content;
     padding: 20px;
 }
 
@@ -23,4 +27,6 @@
 }
 .proizvod img {
     margin-top: 20px;
+    height: 250px;
+    width: 250px;
 }
