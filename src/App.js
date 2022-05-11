@@ -1,6 +1,7 @@
 import './App.css';
 import './css/NavMenu.css'
 import './css/Pocetna.css'
+import './css/KorpaStrana.css'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Pocetna from "./pages/Pocetna";
 import Korpa from "./pages/Korpa";
@@ -20,7 +21,7 @@ function App() {
             opis: 'hleb',
             cena: 50,
             kolicina: 1,
-            jedinicaMere: 'kol',
+            jedinicaMere: 'kom',
             img: 'img/hleb.jpg',
             kolicinaUkorpi: 0
         }, {
@@ -77,6 +78,7 @@ function App() {
         })
 
         setKorpa(proizvodi.filter((proizvod) => (proizvod.kolicinaUkorpi > 0)));
+        setKorpaView(korpa)
         setBrojProizvodaKorpa(brojProizvodaKorpa + 1);
 
 
@@ -91,6 +93,7 @@ function App() {
         })
 
         setKorpa(proizvodi.filter((proizvod) => (proizvod.kolicinaUkorpi > 0)));
+        setKorpaView(korpa)
 
         if (brojProizvodaKorpa > 0) {
             setBrojProizvodaKorpa(brojProizvodaKorpa - 1);
@@ -117,7 +120,7 @@ function App() {
                 <Routes>
 
                     <Route path='/' element={<Pocetna proizvodi={proizvodiView} dodajUKorpu={dodajUKorpu} izbaciIzKorpe={izbaciIzKorpe}/>}/>
-                    <Route path='/korpa' element={<Korpa/>}/>
+                    <Route path='/korpa' element={<Korpa proizvodiUKorpi={korpaView}/>}/>
                     <Route path='/*' element={<NotFound/>}/>
 
                 </Routes>
