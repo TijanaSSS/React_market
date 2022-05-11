@@ -5,7 +5,7 @@ function Proizvod({proizvod,dodajUKorpu,izbaciIzKorpe}){
     return(
         <div className='proizvod'>
             <div className=" card">
-                <img src={proizvod.img} className="card-img-top" alt="Nema slike" />
+                <img src={proizvod.img} className="card-img-top" alt="Nema slike"  height={350}  />
                 <div className="card-body">
                     <h5 className="card-title">{proizvod.naziv}</h5>
                     <p className="card-text">Opis: {proizvod.opis}</p>

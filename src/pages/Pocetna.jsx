@@ -8,7 +8,7 @@ function Pocetna({proizvodi,dodajUKorpu,izbaciIzKorpe}){
            <div className='container'>
                <div className='proizvodi'>
                    {proizvodi.map((proizvod) => (
-                       <Proizvod proizvod={proizvod} />
+                       <Proizvod proizvod={proizvod} dodajUKorpu={dodajUKorpu} izbaciIzKorpe={izbaciIzKorpe} />
                    ))}
                </div>
            </div>
