@@ -5,18 +5,23 @@ import Pocetna from "./pages/Pocetna";
 import Korpa from "./pages/Korpa";
 import NotFound from "./pages/NotFound";
 import NavMeni from "./components/NavMeni";
+import {useState} from "react";
 
 
-function pretraga(){
-
-}
 
 function App() {
+
+  const [brojProizvodaKorpa, setBrojProizvodaKorpa] = useState(0);
+
+  function pretraga() {
+
+  }
+
   return (
     <div className="App">
 
       <BrowserRouter>
-        <NavMeni pretraga={pretraga} />
+        <NavMeni pretraga={pretraga} brojProizvoda={brojProizvodaKorpa} />
         <Routes>
 
           <Route path='/' element={<Pocetna />}/>
