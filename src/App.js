@@ -67,7 +67,6 @@ function App() {
 
     const [korpa, setKorpa] = useState([])
 
-    const [korpaView, setKorpaView] = useState(korpa)
 
     function dodajUKorpu(id) {
 
@@ -78,7 +77,7 @@ function App() {
         })
 
         setKorpa(proizvodi.filter((proizvod) => (proizvod.kolicinaUkorpi > 0)));
-        setKorpaView(korpa)
+
         setBrojProizvodaKorpa(brojProizvodaKorpa + 1);
 
 
@@ -93,7 +92,7 @@ function App() {
         })
 
         setKorpa(proizvodi.filter((proizvod) => (proizvod.kolicinaUkorpi > 0)));
-        setKorpaView(korpa)
+
 
         if (brojProizvodaKorpa > 0) {
             setBrojProizvodaKorpa(brojProizvodaKorpa - 1);
@@ -120,7 +119,7 @@ function App() {
                 <Routes>
 
                     <Route path='/' element={<Pocetna proizvodi={proizvodiView} dodajUKorpu={dodajUKorpu} izbaciIzKorpe={izbaciIzKorpe}/>}/>
-                    <Route path='/korpa' element={<Korpa proizvodiUKorpi={korpaView}/>}/>
+                    <Route path='/korpa' element={<Korpa proizvodiUKorpi={korpa} izbaciIzKorpe={izbaciIzKorpe}/>}/>
                     <Route path='/*' element={<NotFound/>}/>
 
                 </Routes>
