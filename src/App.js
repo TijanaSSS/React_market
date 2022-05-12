@@ -2,6 +2,7 @@ import './App.css';
 import './css/NavMenu.css'
 import './css/Pocetna.css'
 import './css/KorpaStrana.css'
+import './css/NotFound.css'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Pocetna from "./pages/Pocetna";
 import Korpa from "./pages/Korpa";
@@ -117,7 +118,6 @@ function App() {
             <BrowserRouter>
                 <NavMeni pretraga={pretraga} brojProizvoda={brojProizvodaKorpa}/>
                 <Routes>
-
                     <Route path='/' element={<Pocetna proizvodi={proizvodiView} dodajUKorpu={dodajUKorpu} izbaciIzKorpe={izbaciIzKorpe}/>}/>
                     <Route path='/korpa' element={<Korpa proizvodiUKorpi={korpa} izbaciIzKorpe={izbaciIzKorpe}/>}/>
                     <Route path='/*' element={<NotFound/>}/>
